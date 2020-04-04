@@ -25,7 +25,7 @@ hugo -b $HUGO_BASE -d $HUGO_OUTPUT -s $GIT_PATH
 
 # copy to dest
 [ -d "$DEST" ] && mv $DEST $DEST_TMP
-mkdir -p $DEST && cp -r $HUGO_OUTPUT $DEST
+mkdir -p $DEST && cp -r ${HUGO_OUTPUT}/* $DEST
 retVal=$?
 if [ $retVal -ne 0 ]; then
     echo "Copy failed, trying to revert"
